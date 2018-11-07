@@ -2,6 +2,12 @@ const express = require('express');
 const bodyParser = require('body-parser');
 
 
+const mongoose = require('mongoose');
+const keys = require('./config/keys');
+
+mongoose.connect(keys.mongoNection);
+
+
 const app = express();
 
 app.get('/api/usuarios', (req,res)=>{
